@@ -45,9 +45,9 @@ fn solve_b_input(file : &str) -> u32 {
     return res;
 }
 
+#[cfg(test)]
 mod tests {
-    use super::solve_a_input;
-    use super::solve_b_input;
+    use super::*;
 
     #[test]
     fn test_solve_a_example() {

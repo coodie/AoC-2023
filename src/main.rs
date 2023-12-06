@@ -5,7 +5,7 @@ pub mod problem4;
 pub mod problem5;
 pub mod input;
 
-use std::env;
+use std::{env, time::Instant};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -16,6 +16,7 @@ fn main() {
         problem_num = args[0].parse().unwrap();
         problem_letter = args[1].parse().unwrap();
     }
+    let start = Instant::now();
     if problem_num == 1 {
         if problem_letter == 'a' {
             println!("solving 1 a");
@@ -66,4 +67,5 @@ fn main() {
             problem5::solve_b();
         }
     }
+    println!("Runtime: {}ms", start.elapsed().as_millis());
 }

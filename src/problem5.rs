@@ -31,7 +31,7 @@ fn interval_intersection((s1, len1) : (i64, i64), (s2, len2) : (i64, i64)) -> Op
     return None
 }
 
-fn between_interval((s1, len1):(i64,i64), (s2, len2):(i64,i64)) -> (i64,i64){
+fn between_interval((s1, len1):(i64,i64), (s2, _len2):(i64,i64)) -> (i64,i64){
     assert!(s1+len1 <= s2);
     return (s1+len1, s2-(s1+len1))
 }
@@ -150,16 +150,9 @@ fn solve_b_input(file : &str) -> i64 {
             .min().unwrap().0;
 }
 
+#[cfg(test)]
 mod tests {
-    use crate::input::read_lines;
-    use crate::problem5::interval_intersection;
-
-    use super::ProblemInput;
-    use super::interval_complement;
-    use super::parse_input;
-    use super::solve_a_input;
-    use super::solve_b_input;
-
+    use super::*;
     #[test]
     fn test_solve_a_example() {
         let ans = solve_a_input("src/test_files/problem5/a_example.txt");

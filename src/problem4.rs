@@ -1,4 +1,4 @@
-use std::{collections::{HashSet, btree_set::Intersection}, cmp::min};
+use std::{collections::{HashSet}, cmp::min};
 
 use crate::input::read_lines;
 
@@ -62,10 +62,9 @@ fn solve_b_input(file : &str) -> u32 {
     return copy_count.iter().sum();
 }
 
+#[cfg(test)]
 mod tests {
-    use super::solve_a_input;
-    use super::solve_b_input;
-
+    use super::*;
     #[test]
     fn test_solve_a_example() {
         let ans = solve_a_input("src/test_files/problem4/a_example.txt");
